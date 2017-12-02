@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS Study</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+<script>
+// Objects nested inside of objects
+    let jacobsFoods = {
+    pizza: {
+        hasCheese: true,
+        type: "sausage",
+        size: "large"
+    }
+};
+
+let getPizza = jacobsFoods.pizza;
+
+getPizza.size;
+
+
+
+
+
+// Arrays within objects
+let studentData = {
+    name: "Jacob",
+    hobbies: ["fishing", "boating", "fitness"]
+}
+
+studentData.hobbies[1];
+
+
+
+
+
+// Complex objects
+
+let studentData2 = {
+    name: "Jacob",
+    additionalData: {
+        student: true,
+        hobbies: ["fishing", "boating", "fitness"],
+        moreDetails: {
+            favBasketballTeam: "Okc",
+            numberOfSiblings: 1,
+            isYoungest: true,
+            homeTown: {
+                city: "Deland",
+                state: "Florida",
+            },
+            inCollege: true
+        }
+    }
+}
+
+
+studentData2.additionalData.moreDetails.homeTown.city
+
+
+
+
+// Accessing and Setting values in nested objects
+
+let programmingLanguages = {
+    java: {
+        yearCreated: 1995,
+        creator: "James Gosling"
+    },
+    javaScript: {
+        yearCreated: 1995,
+        creator: "Brendan Eich"
+    }
+}
+
+function addProgrammingLanguage(nameOfLanguage, yearLanguageCreated, creatorOfLanguage) {
+    programmingLanguages[nameOfLanguage] = {
+        yearCreated: yearLanguageCreated,
+        creator: creatorOfLanguage
+    }
+}
+
+addProgrammingLanguage("ruby", 1995, "Yukihiro Matsumoto");
+
+
+
+
+
+
+</script>

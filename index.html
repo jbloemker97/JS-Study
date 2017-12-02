@@ -132,7 +132,58 @@ let nestedData = {
     // Invoke the addSnack function and add the snack "chocolate"
     nestedData.innerData.addSnack("chocolate");
 
-    console.log(nestedData.innerData.snacks);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Nested Arrays
+
+    // Double for loop 
+    var nestedArr = [[1,2,3], [4,5,6], [7,8,9,10,11,12]];
+    for (let i = 0; i < nestedArr.length; i++) {
+        for (let j = 0; j < nestedArr[i].length; j++) {
+            // console.log(nestedArr[i][j]);
+        }
+    }
+
+    // Exercises
+        // Log out the even numbers in array
+        let newArr = [[1,2,3],[4,5,6],[7,8],[9,10,11,12]];
+
+        for (let i = 0; i < newArr.length; i++) {
+            for(j = 0; j < newArr[i].length; j++){
+                if (newArr[i][j] % 2 == 0) {
+                    // console.log(newArr[i][j]);
+                }
+            }
+        }
+
+        // Write a function called sumTotal that returns the sum of all numbers in the array
+        var newestArr = [[[1,2],[3,4]],[[5,6]]];
+
+        function sumTotal () {
+            let sum = 0;
+            for (let i = 0; i < newestArr.length; i++) {
+                for (let j = 0; j < newestArr[i].length; j++) {
+                    for (let k = 0; k < newestArr[i][j].length; k++) {
+                        newestArr[i][j][k] + sum;
+                    }
+                }
+            }
+            console.log(sum);
+        }
+
+        sumTotal();
 
 
 

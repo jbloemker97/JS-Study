@@ -189,11 +189,87 @@ let nestedData = {
 
        // Write a function called rotate which takes an array and a number, and moves each element however many spaces the number is to the right. 
         function rotate (arr, num) {
-            if (Array.isArray(arr)) {
-                for (let i = 0; i < arr.length; i++ ) {
-                    
-                }
+            let amount = num % arr.length;
+            for (let i = 0; i < arr.length; i++ ) {
+                arr.unshift(arr.pop());
+            }
+            return arr;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Higher Order Functions 
+function sendMessage(message, fn){
+    return fn(message);
+}
+
+    // Another example of higher order functions
+    function add (a,b) {
+        return a + b;
+    }
+
+    function subtract (a,b) {
+        return a - b;
+    }   
+
+    function math (a,b,fn) {
+        return fn(a,b);
+    }
+
+    math(2,6,add);
+
+
+
+
+
+
+
+
+    // Write a function called each which accepts two parameters: an array and a callback function. Loop over the array and run the callback
+    function each (arr, callBack) {
+        for (let i = 0; i < arr.length; i++) {
+            callBack(arr[i]);
+        }
+    }
+
+    each([1,2,3,4], function(val){
+        // console.log(val);
+    });
+
+    each([1,2,3,4], function(val){
+        // console.log(val * 2);
+    });
+
+
+
+
+    // Exercise
+        // Write a function called map which accepts two parameters: an array and a callback. Function should return a new array with the result of each value being passed to the callback function. 
+        function map (array, callback) {
+            let val = 0;
+            for (let i = 0; i < array.length; i++) {
+                val + array[i];
             }
         }
+
+
+        console.log(map([1,2,3,4], function(val){
+            return val * 2;
+        }));
+
+
+    
+
 
 </script>

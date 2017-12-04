@@ -257,19 +257,131 @@ function sendMessage(message, fn){
     // Exercise
         // Write a function called map which accepts two parameters: an array and a callback. Function should return a new array with the result of each value being passed to the callback function. 
         function map (array, callback) {
-            let val = 0;
+            let val = [];
             for (let i = 0; i < array.length; i++) {
-                val + array[i];
+                val.push(array[i]);
             }
+            // console.log(val);
         }
 
 
-        console.log(map([1,2,3,4], function(val){
+        map([1,2,3,4], function(val){
             return val * 2;
-        }));
+        });
 
 
+
+
+
+
+
+
+// Timers
+setTimeout(function () {
+    // console.log("hello world");
+}, 3000);
+
+    // Console.logs "HI" twice, but the setTimeout function clears the ID     
+    var timerId = setInterval(function(){
+        // console.log("HI!");
+    },1000);
+
+    setTimeout(function(){
+        // clearTimeout(timerId);
+    },3000);
+
+
+
+
+    // Example of the event loop
+        // console.log("first");
+        // setTimeout(function(){
+        //     console.log("second");
+        // },0);
+        // console.log("third");
+
+
+
+
+
+
+
+// Closures
+    // Example of a closure to create a private variable "age"
+    function defineAge () {
+        var age = 28;
+        return function growUp () {
+            return ++age;
+        }
+    }
+
+    var ageOnce = defineAge();
+    ageOnce(); // 29
+    ageOnce(); // 30
+
+
+    // Counter Function
+    function counter () {
+        let count = 0;
+        return function () {
+            return ++count;
+        }
+    }
+
+    let c = counter();
+    c(); // 1
+    c(); // 2
+    c(); // 3
+
+    function createInstructor () {
+        let instructors = ["Elie", "Matt", "Tim"];
+        return {
+            showInstructors: function displayAllInstructors() {
+                return instructors;
+            },
+            addInstructor: function addNewInstructor(instructor) {
+                instructors.push(instructor);
+                return instructors;
+            }
+        }
+    }
+
+    let firstClass = createInstructor();
+    firstClass.addInstructor("Jacob");
+    firstClass.showInstructors(); // ["Elie", "Matt", "Tim", "Jennifer"]
+
+    let secondClass = createInstructor();
+    secondClass.addInstructor("Ashley");
+    secondClass.showInstructors(); // ["Elie", "Matt", "Tim", "Ashley"]
     
+    // Instead of calling createInstructor everytime we can use an IIFE
+    // Also an exampl of a module. AKA the modular pattern
+    var instructorModule = (function createInstructors(){
+    var instructors = ["Elie", "Matt", "Tim"];
+    return {
+        showInstructors: function displayAllInstructors(){
+            return instructors;
+        },
+        addInstructor: function addNewInstructor(instructor){
+            instructors.push(instructor)
+            return instructors;
+        }
+    }
+})();
 
+
+
+
+
+
+
+
+// Exercises 
+    // Write a function called countdown that accepts a number as a parameter and every 1000ms the value decreases by 1. Once the value logs 0 it should log "DONE".
+    function countdown (num) {
+       
+    }
+
+    countdown(10);
 
 </script>

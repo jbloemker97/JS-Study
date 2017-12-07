@@ -369,19 +369,35 @@ setTimeout(function () {
     }
 })();
 
+// Local Storage
+    // All keys being stored in local storage must be strings.
+
+    // Set an item in local storage
+    localStorage.setItem("instructor", "Elie");
+    localStorage.setItem("favNum", 18);
+
+    // Get an item from local storage
+    localStorage.getItem("instructor");
+
+    // Delete an item from local storage
+    localStorage.removeItem("instructor");
+
+    // Clear everything from local storage
+    localStorage.clear();
+
+
+    // Adding objects into local storage
+    // Notice we have to use JSON.stringify 
+    var instructors = ["Elie", "Matt", "Tim"];
+
+    localStorage.setItem("instructors", JSON.stringify(instructors));
+    localStorage.getItem("instructors");
+
+    localStorage.clear();
 
 
 
 
 
-
-
-// Exercises 
-    // Write a function called countdown that accepts a number as a parameter and every 1000ms the value decreases by 1. Once the value logs 0 it should log "DONE".
-    function countdown (num) {
-       
-    }
-
-    countdown(10);
 
 </script>
